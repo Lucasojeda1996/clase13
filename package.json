@@ -1,0 +1,23 @@
+{
+  "name": "2-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "node --watch ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.1",
+    "next": "^15.5.2"
+  }
+}
