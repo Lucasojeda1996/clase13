@@ -4,12 +4,16 @@ import Users from "../models/User.model.js";
 class UserRepository {
     static async createUser(name, email, password){
         //Logica de interaccion con la DB para crear el usuario
-        await Users.insertOne({
+return        await Users.insertOne({
             name: name,
             email: email,
             password: password,
         })
         return true
+    }
+    static async getByEmail (email){
+        const user = await Users.findOne({email: email})
+        return user
     }
 
     static async getAll (){
@@ -36,23 +40,16 @@ class UserRepository {
                 new: true //Cuando se haga la actualizacion nos traiga el objeto actualizado
             } 
         )
-
         return user_updated
     }
 }
-
 export default UserRepository
-
-
 //Un metodo o propiedad estatica puede ser llamada desde la clase, sin necesidad de instanciar dicha clase
 //Por que usar estaticos? para no tener mas de una instancia del userRepository
-
-
-
-
-
 
 /* 
 const userRepository = new UserRepository()
 userRepository.createUser() 
 */
+
+
